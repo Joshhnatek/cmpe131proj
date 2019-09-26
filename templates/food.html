@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h1>Welcome {{name}}! Here are some top food</h1>
+        <a href='https://www.google.com'>GOOOOOOGLE</a>
+        <ul>
+            {% for food in top_food %}
+                <li>{{food}}</li>
+            {% endfor %}
+        </ul> 
+
+{% endblock %}
