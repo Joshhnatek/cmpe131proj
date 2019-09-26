@@ -1,6 +1,5 @@
-from flask import Flask
+from app import app
 from flask import render_template
-app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -8,7 +7,7 @@ def home():
 
 @app.route("/ingredients")
 def ingredients():
-    pantry = ['Salt', 'Pepper', 'Cheese: Mild Cheddar', 'Chicken Breast', 'Beans: Black', 'Cabbage']
+    pantry = []
     title = "Virutal Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
      
