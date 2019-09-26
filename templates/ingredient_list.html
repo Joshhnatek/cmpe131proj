@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h1>Your Virtual Pantry</h1>
+
+        {% if pantry %}
+            <ul>
+            {% for item in pantry %}
+                <li>{{ item }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <h2>Your Pantry is Empty</h2>
+        {% endif %}
+{% endblock %}

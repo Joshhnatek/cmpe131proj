@@ -8,7 +8,9 @@ def home():
 
 @app.route("/ingredients")
 def ingredients():
-    return ("Ingredients List will be here")
+    pantry = ['Salt', 'Pepper', 'Cheese: Mild Cheddar', 'Chicken Breast', 'Beans: Black', 'Cabbage']
+    title = "Virutal Pantry"
+    return render_template("ingredient_list.html", title = title, pantry = pantry)
      
 if __name__ == "__main__":
     app.run()
