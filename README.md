@@ -1,7 +1,7 @@
-#BROKE 'n HUNGRY
-###Status: WIP
+# BROKE 'n HUNGRY
+### Status: WIP
 
-##Problem Statement: 
+## Problem Statement: 
 >Many of us have ingredients and food items in stock but not sure on the available and creative ways to make dishes. 
 >Broke 'n Hungry will take in a list of ingredients and food items that you have and present you with recipes that you can make!
 
