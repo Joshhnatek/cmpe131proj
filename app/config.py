@@ -1,4 +1,8 @@
 import os
+
+class Config(object):
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+
 basedir = os.path.abspath(os.path.dirname(__file__name))
 
 class Config(object):
