@@ -6,7 +6,7 @@
 >Broke 'n Hungry will take in a list of ingredients and food items that you have and present you with recipes that you can make!
 
 ## Objectives:
-- Porvide a solution to organize user's ingredients by suggesting recipes that they may prepare with what they have.
+- Provide a solution to organize user's ingredients by suggesting recipes that they may prepare with what they have.
 - Provide culinary education. 
 
 Functions:
