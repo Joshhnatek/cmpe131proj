@@ -11,3 +11,4 @@ class User(db.Model):
 
 class Pantry(db.Model):
     user_id = db.Column(db.Integer, db.ForeighnKey('owner.id'))
+    # connect to a growable list of ingredients
