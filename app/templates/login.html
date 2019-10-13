@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h4>Login</h4>
+        
+        <form>
+            <p>
+               {{form.email.label}}<br>
+               {{form.email}} 
+            </p>
+
+            <p>
+                {{form.password.label}}<br>
+                {{form.password}} 
+            </p>
+
+            <p>
+                {{form.remember.label}}<br>
+                {{form.remember}} 
+            </p>
+
+            <p>
+                {{form.submit.label}}<br>
+                {{form.submit}} 
+             </p>
+        </form>
+        
+{% endblock %}
