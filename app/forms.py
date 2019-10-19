@@ -10,7 +10,7 @@ class User_Form(FlaskForm):
     submit = SubmitField('Login')
 
 class Reg_Form(FlaskForm):
-    username = StringField('Username', Validators=[DataRequired])
+    username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])  # Email() checks if the input matches the email format
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
@@ -22,6 +22,6 @@ class Reg_Form(FlaskForm):
             raise ValidationError("Username is already in use")
 
     def validate_email(self, email):
-        email = User.query.filter_by(email=email.data).first()
-        if email is not None:
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
             raise ValidationError("Email is already in use")

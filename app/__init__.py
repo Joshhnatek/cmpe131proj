@@ -12,5 +12,10 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 
+@app.before_first_request
+def create_tables():
+    from app.models import User
+    db.create_all()
+
 from app import routes, models, forms
 
