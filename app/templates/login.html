@@ -4,24 +4,23 @@
 
         <h4>Login</h4>
         
-        <form>
+        <form action='' method="post" novalidate>
+            {{form.hidden_tag()}}
             <p>
                {{form.email.label}}<br>
-               {{form.email}} 
+               {{form.email(size = 32)}}
             </p>
 
             <p>
                 {{form.password.label}}<br>
-                {{form.password}} 
+                {{form.password(size = 32)}}
             </p>
 
             <p>
-                {{form.remember.label}}<br>
-                {{form.remember}} 
+                {{form.remember}} {{form.remember.label}}
             </p>
 
             <p>
-                {{form.submit.label}}<br>
                 {{form.submit}} 
              </p>
         </form>
