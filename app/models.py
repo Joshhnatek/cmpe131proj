@@ -1,5 +1,7 @@
-from app import db
+from app import db, login
 
+
+#todo password_hash
 class User(db.Model):
     id =  db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -9,6 +11,10 @@ class User(db.Model):
 
     def __repr(self):
         return '{}'.format(self.username)
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 """
 class Pantry(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('owner.id'))
