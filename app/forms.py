@@ -25,3 +25,5 @@ class Reg_Form(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError("Email is already in use")
+
+#class Ingredient_Form(FlaskForm):
