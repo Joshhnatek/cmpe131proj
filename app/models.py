@@ -8,7 +8,7 @@ class User(db.Model):
     password_hash = db.Column(db.String(128))
     # pantry = db.relationship('Pantry', backref='owner')
 
-    def __repr(self):
+    def __repr__(self):
         return '{}'.format(self.username)
 
     def set_password(self, password):

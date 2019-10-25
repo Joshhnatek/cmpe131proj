@@ -1,4 +1,4 @@
-{% etends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <h4>Register</h4>
@@ -10,13 +10,18 @@
     </p>
 
     <p>
+        {{form.username.label}}<br>
+        {{form.username}} 
+     </p>
+
+    <p>
         {{form.password.label}}<br>
         {{form.password}} 
     </p>
 
     <p>
-        {{form.remember.label}}<br>
-        {{form.remember}} 
+        {{form.password2.label}}<br>
+        {{form.password2}} 
     </p>
 
     <p>
