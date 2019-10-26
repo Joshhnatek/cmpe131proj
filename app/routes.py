@@ -8,11 +8,11 @@ from werkzeug.urls import url_parse
 
 @app.route("/")
 @app.route("/home")
-@login_required
 def home():
     return render_template("home.html")
 
 @app.route("/ingredients")
+@login_required
 def ingredients():
     pantry = []
     title = "Virtual Pantry"
