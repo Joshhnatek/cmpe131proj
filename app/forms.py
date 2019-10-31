@@ -26,4 +26,4 @@ class Registration_Form(FlaskForm):
         if user is not None:
             raise ValidationError("Email is already in use")
 
-#class Ingredient_Form(FlaskForm):
+

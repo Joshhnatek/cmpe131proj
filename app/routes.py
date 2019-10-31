@@ -17,6 +17,13 @@ def ingredients():
     pantry = []
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
+
+@app.route("/stock_pantry")
+@login_required
+def stock_pantry():
+    title = "Stock Pantry"
+    form = Add_Ingredient_Form()
+    return render_template("stock_pantry.html", title = title, form = form)
      
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
