@@ -3,7 +3,7 @@
 {% block content %}
 
         <h1>Hey {{current_user.username}}! </br>Heres Your Virtual Pantry</h1>
-
+        <a href="{{url_for('stock_pantry')}}"></a>
         {% if pantry %}
             <ul>
             {% for item in pantry %}

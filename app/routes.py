@@ -23,7 +23,8 @@ def ingredients():
 def stock_pantry():
     title = "Stock Pantry"
     form = Add_Ingredient_Form()
-    return render_template("stock_pantry.html", title = title, form = form)
+    pantry = current_user.
+    return render_template("stock_pantry.html", title = title, form = form, pantry = pantry)
      
 @app.route("/login", methods = ['GET', 'POST'])
 def login():

@@ -26,4 +26,8 @@ class Registration_Form(FlaskForm):
         if user is not None:
             raise ValidationError("Email is already in use")
 
-
+class Add_Ingredient_Form(FlaskForm):
+    category = StringField('Category', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    submit = SubmitField('Add Ingredinet(s)') 
+    confirm = SubmitField('Confirm')
