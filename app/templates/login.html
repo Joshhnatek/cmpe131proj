@@ -4,26 +4,34 @@
 
         <h4>Login</h4>
         
-        <form>
+        <form action='' method="post" novalidate>
+            {{form.hidden_tag()}}
             <p>
                {{form.email.label}}<br>
-               {{form.email}} 
+               {{form.email(size = 32)}}<br>
+               {% for error in form.email.errors %}
+               <span style="color: red;">[{{error}}]</span>
+               {% endfor %}
             </p>
 
             <p>
                 {{form.password.label}}<br>
-                {{form.password}} 
+                {{form.password(size = 32)}}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{error}}]</span>
+                {% endfor %}
             </p>
 
             <p>
-                {{form.remember.label}}<br>
-                {{form.remember}} 
+                {{form.remember}} {{form.remember.label}}
             </p>
 
             <p>
-                {{form.submit.label}}<br>
                 {{form.submit}} 
-             </p>
+            </p>
+            <p>
+                New User? <a href="{{url_for('register') }}">Register here!</a>
+            </p>
         </form>
         
 {% endblock %}
