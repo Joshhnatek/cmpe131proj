@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    # pantry = db.relationship('Pantry', backref='owner')
+    #pantry = db.relationship('Pantry', backref='user')
 
     def __repr__(self):
         return '{}'.format(self.username)
@@ -19,6 +19,13 @@ class User(db.Model, UserMixin):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+class Pantry(db.Model):
+    __tablename__ = 'pantry'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, index=True)
+    ingredient_id = db.Column(db.Integer, index=True)
+    # connect to a growable list of ingredients 
 
 @login.user_loader
 def load_user(id):
@@ -31,10 +38,5 @@ class Ingredients(db.Model):
     ingredient_category = db.Column(db.String(128), index=True, unique=True)
 
     def __repr__(self):
-        return '{}'.format(self.ingredient_name)
-"""
-class Pantry(db.Model):
-    __tablename__ = 'pantry'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    # connect to a growable list of ingredients """
+        return '{}:{}'.format(self.ingredient_category, self.ingredient_name)
+

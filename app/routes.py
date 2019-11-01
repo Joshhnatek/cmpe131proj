@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, redirect, url_for, flash, request
-from app.forms import User_Form, Registration_Form
+from app.forms import User_Form, Registration_Form, Add_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
@@ -19,11 +19,11 @@ def ingredients():
     return render_template("ingredient_list.html", title = title, pantry = pantry)
 
 @app.route("/stock_pantry")
-@login_required
+
 def stock_pantry():
     title = "Stock Pantry"
     form = Add_Ingredient_Form()
-    pantry = current_user.
+    pantry = current_user.pantry
     return render_template("stock_pantry.html", title = title, form = form, pantry = pantry)
      
 @app.route("/login", methods = ['GET', 'POST'])
