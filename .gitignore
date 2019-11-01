@@ -4,5 +4,5 @@ app/__init__.pyc
 app/venv
 *.orig
 /test.py
-/.idea
+.idea/*
 .pytest_cache
