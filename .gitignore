@@ -5,3 +5,6 @@ app/.vscode
 app/.idea
 venv/
 *.orig
+/test.py
+.idea/*
+.pytest_cache
