@@ -14,7 +14,7 @@ def home():
 @app.route("/ingredients")
 @login_required
 def ingredients():
-    pantry = []
+    pantry = [] #temp object
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
 
@@ -23,8 +23,9 @@ def ingredients():
 def stock_pantry():
     title = "Stock Pantry"
     form = Add_Ingredient_Form()
-    pantry = current_user.pantry
-    return render_template("stock_pantry.html", title = title, form = form, pantry = pantry)
+    pantry = [] #temp object
+    return render_template("stock_pantry.html", title = title, form = form, 
+                    pantry = pantry)
      
 @app.route("/login", methods = ['GET', 'POST'])
 def login():

@@ -3,7 +3,6 @@
 {% block content %}
     <body>
         <h1>Hey {{current_user.username}}!</br>Heres Your Virtual Pantry</h1>
-        <p>HIII</p>
         <a href="{{url_for('stock_pantry') }}">Stock Pantry</a>
         {% if pantry %}
             <ul>
