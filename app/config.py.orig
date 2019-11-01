@@ -1,0 +1,15 @@
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+class Config(object):
+<<<<<<< HEAD
+    SECRET_KEY = 'something something' # os.environ.get('SECRET_KEY')
+    
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///databases/app.db'
+    SQALCHEMY_TRACK_MODIFICATIONS = False
+=======
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+>>>>>>> 2dc4ef467062df9f87e4c46d5dd5cd709ebcf22c
