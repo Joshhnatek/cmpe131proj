@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    #pantry = db.relationship('pantry', backref='owner')
+    # pantry = db.relationship('Pantry', backref='owner')
 
     def __repr__(self):
         return '{}'.format(self.username)
@@ -36,5 +36,6 @@ class Ingredients(db.Model):
 class Pantry(db.Model):
     __tablename__ = 'pantry'
     id = db.Column(db.Integer, primary_key=True)
+    ingredient_id = db.Column(db.Integer, index=True, unique=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     # connect to a growable list of ingredients """

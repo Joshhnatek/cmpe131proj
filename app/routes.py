@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, redirect, url_for, flash, request
-from app.forms import User_Form, Reg_Form
+from app.forms import User_Form, Registration_Form
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
@@ -40,7 +40,7 @@ def login():
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
-    form = Reg_Form()
+    form = Registration_Form()
     if form.validate_on_submit():
         user = User(username = form.username.data, email = form.email.data)
         user.set_password(form.password.data)

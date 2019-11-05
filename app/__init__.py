@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config.from_object(Config)
+app.config['SECRET_KEY'] = Config.SECRET_KEY
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
