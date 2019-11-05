@@ -35,10 +35,10 @@ def load_user(id):
 
 class Ingredients(db.Model):
     __tablename__ = 'ingredient'
-    ingredient_id = db.Column(db.Integer, primary_key=True, unique=True)
-    ingredient_name = db.Column(db.String(128), index=True, unique=True)
-    ingredient_category = db.Column(db.String(128), index=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
+    name = db.Column(db.String(128), index=True, unique=True)
+    category = db.Column(db.String(128), index=True)
 
     def __repr__(self):
-        return '{}:{}:{}'.format(self.ingredient_category, self.ingredient_name, self.ingredient_id)
+        return '{}:{}:{}'.format(self.category, self.name, self.id)
 
