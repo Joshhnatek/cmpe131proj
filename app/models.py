@@ -36,9 +36,12 @@ def load_user(id):
 class Ingredients(db.Model):
     __tablename__ = 'ingredient'
     id = db.Column(db.Integer, primary_key=True, unique=True)
-    name = db.Column(db.String(128), index=True, unique=True)
+    name = db.Column(db.String(128), index=True)
     category = db.Column(db.String(128), index=True)
 
     def __repr__(self):
         return '{}:{}:{}'.format(self.category, self.name, self.id)
 
+    def get_id(self, category, name):
+        item = Ingredients.query.filter_by(category='category').filter_by(name='name').first()
+        return item.id
