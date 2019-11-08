@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginstyle.css') }}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
 
-        <h4>Login</h4>
-        
+<body>
+
+
+        <h4>Account Login</h4>
         <form action='' method="post" novalidate>
             {{form.hidden_tag()}}
             <p>
@@ -22,16 +32,18 @@
                 {% endfor %}
             </p>
 
-            <p>
-                {{form.remember}} {{form.remember.label}}
-            </p>
-
-            <p>
-                {{form.submit}} 
-            </p>
-            <p>
-                New User? <a href="{{url_for('register') }}">Register here!</a>
-            </p>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input"id="check1";
+                 <label class="form-check-label" for="check1">Remember Me</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="login">
+            </div>
+                	<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="{{url_for('register') }}">Register here</a>
+				</div>
         </form>
-        
+        </body>
+
+
 {% endblock %}

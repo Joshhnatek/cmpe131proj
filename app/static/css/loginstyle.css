@@ -1,0 +1,24 @@
+h4 p{
+text-align: center;
+}
+body{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/static/img/burrito-chicken-delicious-dinner-461198.jpg');
+}
+.form-group{
+    color:black;
+    background-color: #FFC312;
+    witdh: 10px;
+}
+.form-check-label{
+    color: white;
+}
+.links{
+    font:20px;
+    color: white;
+}
+.form-check{
+    text-align: center;
+}
