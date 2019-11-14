@@ -1,3 +1,8 @@
 app/__pycache__
 __pycache__
 app/__init__.pyc
+app/venv
+*.orig
+/test.py
+.idea/*
+.pytest_cache
