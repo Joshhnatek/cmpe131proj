@@ -1,6 +1,13 @@
-h4 p{
-text-align: center;
+h4{
+    font-size: 30px;
+    text-align: center;
+    color: orangered;
 }
+
+p{
+    color: orangered;
+}
+
 body{
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -21,4 +28,18 @@ body{
 }
 .form-check{
     text-align: center;
+}
+
+
+
+.input-container{
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px;
+    outline: none;
 }

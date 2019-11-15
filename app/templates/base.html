@@ -1,5 +1,7 @@
 <html>
     <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         {% if title %}
         <title>{{title}}</title>
 
@@ -9,6 +11,7 @@
     </head>
 
     <div>
+        <i style='font-size:24px' class='fas'>&#xf015;</i>
         <a href="{{url_for('home')}}">Home</a>
         {% if current_user.is_anonymous %}
         <a href="{{url_for('login')}}">Login</a>
@@ -19,15 +22,6 @@
 
     </div>
     <body>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <ul>
-                {% for message in messages %}
-                <li>{{message}}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
        <hr>
        {% block content %}{% endblock %}
     </body>
