@@ -8,29 +8,30 @@ p{
     color: orangered;
 }
 
-body{
-    background-attachment: fixed;
+.bg-img{
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     background-image: url('/static/img/burrito-chicken-delicious-dinner-461198.jpg');
 }
+
 .form-group{
     color:black;
     background-color: #FFC312;
-    witdh: 10px;
+    width: 10px;
 }
+
 .form-check-label{
     color: white;
 }
 .links{
-    font:20px;
+    font-size: 20px;
     color: white;
 }
 .form-check{
     text-align: center;
 }
-
-
 
 .input-container{
     display: flex;
@@ -41,5 +42,37 @@ body{
 .input-field{
     width: 100%;
     padding: 10px;
+    outline: none;
+}
+
+.input-field:focus{
+    border: 2px solid #FFC312;
+}
+
+.icon{
+    padding: 10px;
+    background: #FFC312;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+}
+
+.container{
+    position: absolute;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: gray;
+    width: 100%;
+}
+
+input[type = text], input[type=password]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+}
+
+input[type=text]:focus, input[type=password]:focus{
     outline: none;
 }

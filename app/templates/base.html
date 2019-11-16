@@ -2,6 +2,7 @@
     <head>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href='/static/css/basestyle.css'/>
         {% if title %}
         <title>{{title}}</title>
 
@@ -11,15 +12,16 @@
     </head>
 
     <div>
-        <i style='font-size:24px' class='fas'>&#xf015;</i>
-        <a href="{{url_for('home')}}">Home</a>
-        {% if current_user.is_anonymous %}
-        <a href="{{url_for('login')}}">Login</a>
-        {% else %}
-        <a href="{{url_for('ingredients')}}">Ingredients</a>
-        <a href="{{url_for('logout')}}">Logout</a>
-        {% endif %}
+        <ul>
 
+            <li><a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a></li>
+            {% if current_user.is_anonymous %}
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            {% else %}
+            <li><a href="{{url_for('ingredients')}}">Ingredients</a></li>
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
+            {% endif %}
+        </ul>
     </div>
     <body>
        <hr>
