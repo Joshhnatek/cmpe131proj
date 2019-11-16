@@ -1,13 +1,20 @@
 h4{
     font-size: 30px;
     text-align: center;
-    color: orangered;
+    color: #FFC312;
 }
 
 p{
-    color: orangered;
+    color: #FFC312;
 }
 
+a{
+    color: darkorange;
+}
+
+a:hover{
+    color: orangered;
+}
 .bg-img{
     height: 100%;
     background-repeat: no-repeat;
@@ -39,18 +46,18 @@ p{
     margin-bottom: 15px;
 }
 
+.remember{
+    margin-bottom: 15px;
+    color: #FFC312;
+}
 .input-field{
     width: 100%;
     padding: 10px;
     outline: none;
 }
 
-.input-field:focus{
-    border: 2px solid #FFC312;
-}
-
 .icon{
-    padding: 10px;
+    padding: 15px;
     background: #FFC312;
     color: black;
     min-width: 50px;
@@ -59,20 +66,24 @@ p{
 
 .container{
     position: absolute;
-    margin: 20px;
+    margin-top: 75px;
+    right: 20;
     max-width: 300px;
     padding: 16px;
     background-color: gray;
     width: 100%;
 }
 
-input[type = text], input[type=password]{
+.btn{
+    background-color: #FFC312;
+    color: black;
     width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+    padding: 10px 15px;
     border: none;
+    opacity: 0.9;
 }
 
-input[type=text]:focus, input[type=password]:focus{
-    outline: none;
+.btn:hover{
+    opacity: 1;
 }
+
