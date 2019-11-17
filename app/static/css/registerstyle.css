@@ -13,9 +13,13 @@ div h4{
     background-image: url('/static/img/burrito-chicken-delicious-dinner-461198.jpg');
 }
 
-.container{
+
+form div{
+    position: absolute;
     padding: 16px;
     background-color: gray;
+    max-width: 300px;
+    right: 20px;
 }
 
 label{
