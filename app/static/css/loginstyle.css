@@ -15,6 +15,7 @@ a{
 a:hover{
     color: orangered;
 }
+
 .bg-img{
     height: 100%;
     background-repeat: no-repeat;
@@ -32,10 +33,12 @@ a:hover{
 .form-check-label{
     color: white;
 }
+
 .links{
     font-size: 20px;
     color: white;
 }
+
 .form-check{
     text-align: center;
 }
@@ -50,6 +53,7 @@ a:hover{
     margin-bottom: 15px;
     color: #FFC312;
 }
+
 .input-field{
     width: 100%;
     padding: 10px;
@@ -67,7 +71,7 @@ a:hover{
 .container{
     position: absolute;
     margin-top: 75px;
-    right: 20;
+    right: 20px;
     max-width: 300px;
     padding: 16px;
     background-color: gray;

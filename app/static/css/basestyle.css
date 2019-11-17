@@ -5,7 +5,7 @@ ul{
     background-color: gray;
     overflow: hidden;
 
-    /* Makes the nav bar stay while scrolling and filled in white spaces*/
+    /* Makes the nav bar stay while scrolling and fills in white spaces*/
     position: fixed;
     top: 0;
     width: 100%;
@@ -17,13 +17,14 @@ li{
 
 li a{
     display: block;
-    padding: 16px;
+    padding: 10px;
     text-align: center;
     color: #FFC312;
     text-decoration: none;
+    font-size: 15px;
 }
 
 li a:hover{
     background-color: dimgray;
-    color: #FFC312;
+    color: orangered;
 }
