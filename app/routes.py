@@ -2,7 +2,7 @@ from app import app, db
 from flask import render_template, redirect, url_for, flash, request
 from app.forms import User_Form, Registration_Form, Add_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Ingredients
 from werkzeug.urls import url_parse
 
 
@@ -18,14 +18,18 @@ def ingredients():
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
 
-@app.route("/stock_pantry")
-
+@app.route("/stock_pantry", methods = ['GET', 'POST'])
 def stock_pantry():
     title = "Stock Pantry"
+
     form = Add_Ingredient_Form()
-    pantry = []
-    return render_template("stock_pantry.html", title = title, form = form, 
-                    pantry = pantry)
+
+    items = Ingredients.query.with_entities(Ingredients.category).distinct()
+    form.category.choices = [(i.category, i.category) for i in items ]
+    # todo: add items within category choices
+    form.name.choices = [(i.id, i.name) for i in Ingredients.query.filter_by(category=items[0].category).all()]
+
+    return render_template("stock_pantry.html", title = title, form = form)
      
 @app.route("/login", methods = ['GET', 'POST'])
 def login():

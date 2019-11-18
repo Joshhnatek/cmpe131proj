@@ -1,21 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Stock Your Pantry</h1>
 
 <div>
-<h2>Pantry</h2>
-    {% if pantry %}
-    <ul>
-    {% for item in pantry %}
-        <li>{{ item }}</li>
-    {% endfor %}
-    </ul>
-    {% else %}
-    <h4>Empty</h4>
-    {% endif %}
+    <form method = 'POST'>
+        {{form.category}}
+        {{form.name}}
+        {{form.submit}}
+
+    </form>
 </div>
 
-<div>
-    <h2>Add Items</h2>
-</div>
+{% endblock %}
 
 
 
