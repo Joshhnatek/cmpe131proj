@@ -70,8 +70,8 @@ a:hover{
 
 .container{
     position: absolute;
-    margin-top: 75px;
-    right: 20px;
+    top: 25%;
+    right: 5%;
     max-width: 300px;
     padding: 16px;
     background-color: gray;
