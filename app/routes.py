@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, request, jsonify
 from app.forms import User_Form, Registration_Form, Add_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Ingredients
@@ -26,11 +26,24 @@ def stock_pantry():
 
     items = Ingredients.query.with_entities(Ingredients.category).distinct()
     form.category.choices = [(i.category, i.category) for i in items ]
-    # todo: add items within category choices
+
     form.name.choices = [(i.id, i.name) for i in Ingredients.query.filter_by(category=items[0].category).all()]
 
     return render_template("stock_pantry.html", title = title, form = form)
      
+@app.route('/get_items/<category>')
+def get_items(category):
+    collection = Ingredients.query.filter_by(category=category).all()
+    
+    itemsArray = []
+    for i in collection:
+        itemObj = {}
+        itemObj['id'] = i.id
+        itemObj['name'] = i.name
+        itemsArray.append(itemObj)
+
+    return jsonify({'items' : itemsArray})
+
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
