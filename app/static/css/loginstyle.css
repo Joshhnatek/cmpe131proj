@@ -1,22 +1,22 @@
-h4{
+.login-img h4{
     font-size: 30px;
     text-align: center;
     color: #FFC312;
 }
 
-p{
+.login-img p{
     color: #FFC312;
 }
 
-a{
+.login-img a{
     color: darkorange;
 }
 
-a:hover{
+.login-img a:hover{
     color: orangered;
 }
 
-.bg-img{
+.login-img{
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;

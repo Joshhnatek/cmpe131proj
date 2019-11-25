@@ -1,4 +1,4 @@
-div h4{
+.bg_img div h4{
     color: #FFC312;
     text-align: center;
     font-size: 30px;
@@ -14,7 +14,7 @@ div h4{
 }
 
 
-form div{
+.bg_img form div{
     position: absolute;
     padding: 16px;
     background-color: gray;
@@ -22,11 +22,11 @@ form div{
     right: 20px;
 }
 
-label{
+.bg_img label{
     color: #FFC312;
 }
 
-input[type=text], input[type=password]{
+.bg_img input[type=text], .bg_img input[type=password]{
     width: 100%;
     padding: 5px;
     border: none;
