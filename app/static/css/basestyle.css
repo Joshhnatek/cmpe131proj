@@ -1,4 +1,4 @@
-ul{
+.base_list{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ ul{
     width: 100%;
 }
 
-li{
+.base_list li{
     float: left;
 }
 

@@ -12,8 +12,7 @@
     </head>
 
     <div>
-        <ul>
-
+        <ul class="base_list">
             <li><a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a></li>
             {% if current_user.is_anonymous %}
             <li><a href="{{url_for('login')}}">Login</a></li>

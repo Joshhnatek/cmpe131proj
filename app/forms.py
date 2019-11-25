@@ -29,7 +29,7 @@ class Registration_Form(FlaskForm):
 class Add_Ingredient_Form(FlaskForm):
     category = SelectField('Category', choices= [])
     name = SelectField('Name', choices= [])
-    submit = SubmitField('Add Ingredinet(s)') 
+    submit = SubmitField('Add Ingredient(s)')
     confirm = SubmitField('Confirm')
 
 

@@ -14,11 +14,11 @@ def home():
 @app.route("/ingredients")
 @login_required
 def ingredients():
-    items = Pantry.query.filter_by(user_id = current_user.id).all()
+    items = Pantry.query.filter_by(user_id=current_user.id).all()
     pantry = []
     
     for ingredient in items:
-        i = Ingredients.query.filter_by(id= ingredient.ingredient_id).first()
+        i = Ingredients.query.filter_by(id=ingredient.ingredient_id).first()
         pantry.append(i)
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
