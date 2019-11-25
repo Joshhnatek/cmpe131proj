@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Stock Your Pantry</h1>
+
+<body> 
+    <form method = 'POST'>
+        {{ form.category }}
+        {{ form.name }}
+        {{ form.submit }}
+       
+
+    </form>
+
+    <script>
+        let category_select = document.getElementById('category'); 
+        let name_select = document.getElementById('name');
+
+        category_select.onchange = function(){
+            category = category_select.value; 
+            
+            fetch('/get_items/' + category).then(function(response){
+                response.json().then(function(data){
+
+                    let optionHTML = '';
+
+                    for(let item of data.items){
+                        optionHTML += '<option value="' + item.id + '">' + item.name + '</option>';
+                    }
+
+                    name_select.innerHTML = optionHTML; 
+                });
+            }); 
+        }
+    </script>
+</body>
+
+{% endblock %}
+
+
+
+

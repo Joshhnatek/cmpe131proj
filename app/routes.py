@@ -1,8 +1,8 @@
 from app import app, db
-from flask import render_template, redirect, url_for, flash, request
-from app.forms import User_Form, Registration_Form
+from flask import render_template, redirect, url_for, flash, request, jsonify
+from app.forms import User_Form, Registration_Form, Add_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Ingredients, Pantry
 from werkzeug.urls import url_parse
 
 
@@ -14,10 +14,54 @@ def home():
 @app.route("/ingredients")
 @login_required
 def ingredients():
+    items = Pantry.query.filter_by(user_id = current_user.id).all()
     pantry = []
+    
+    for ingredient in items:
+        i = Ingredients.query.filter_by(id= ingredient.ingredient_id).first()
+        pantry.append(i)
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
+
+@app.route("/stock_pantry", methods = ['GET', 'POST'])
+def stock_pantry():
+    title = "Stock Pantry"
+
+    form = Add_Ingredient_Form()
+
+    items = Ingredients.query.with_entities(Ingredients.category).distinct()
+    form.category.choices = [(i.category, i.category) for i in items ]
+
+    form.name.choices = [(i.id, i.name) for i in Ingredients.query.filter_by(category=items[0].category).all()]
+
+    if request.method == "POST": 
+        ingredient = Ingredients.query.filter_by(category=form.category.data).filter_by(id=form.name.data).first()
+    
+        if(Pantry.query.filter_by(user_id= current_user.id).filter_by(ingredient_id= ingredient.id).first()):
+            flash("Selected Ingredient is already in your pantry", Ingredients.query.filter_by(id=ingredient.id).first().name)
+            return(redirect(url_for('stock_pantry')))
+        else:
+            item = Pantry(user_id = current_user.id, ingredient_id = ingredient.id)
+            db.session.add(item)
+            db.session.commit()
+            flash("Added Selected Ingredients!")
+            return redirect(url_for('ingredients'))
+        
+    return render_template("stock_pantry.html", title = title, form = form)
      
+@app.route('/get_items/<category>')
+def get_items(category):
+    collection = Ingredients.query.filter_by(category=category).all()
+    
+    itemsArray = []
+    for i in collection:
+        itemObj = {}
+        itemObj['id'] = i.id
+        itemObj['name'] = i.name
+        itemsArray.append(itemObj)
+
+    return jsonify({'items' : itemsArray})
+
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
     if current_user.is_authenticated:

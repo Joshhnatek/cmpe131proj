@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
-from app.models import User
+from app.models import User, Ingredients
 
 class User_Form(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
@@ -26,4 +26,10 @@ class Registration_Form(FlaskForm):
         if user is not None:
             raise ValidationError("Email is already in use")
 
-#class Ingredient_Form(FlaskForm):
+class Add_Ingredient_Form(FlaskForm):
+    category = SelectField('Category', choices= [])
+    name = SelectField('Name', choices= [])
+    submit = SubmitField('Add Ingredinet(s)') 
+    confirm = SubmitField('Confirm')
+
+
