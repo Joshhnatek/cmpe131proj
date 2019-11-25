@@ -1,4 +1,4 @@
-.bg_img div h4{
+.register-container h4{
     color: #FFC312;
     text-align: center;
     font-size: 30px;
@@ -14,7 +14,7 @@
 }
 
 
-.bg_img form div{
+.register-container{
     position: absolute;
     padding: 16px;
     background-color: gray;
@@ -22,11 +22,11 @@
     right: 20px;
 }
 
-.bg_img label{
+.register-container label{
     color: #FFC312;
 }
 
-.bg_img input[type=text], .bg_img input[type=password]{
+.register-container input[type=text], .register-container input[type=password]{
     width: 100%;
     padding: 5px;
     border: none;
