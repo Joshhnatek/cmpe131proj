@@ -12,5 +12,6 @@
     <h2>Your Pantry is Empty</h2>
     {% endif %}
     <br>
-    <p><a href="{{url_for('stock_pantry')}}">Stock Pantry</a></p>
+    <a href="{{url_for('stock_pantry')}}">Stock Pantry</a> <br>
+    <a href="{{url_for('remove_ingredient') }}">Remove</a>
 {% endblock %}

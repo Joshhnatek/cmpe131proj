@@ -66,15 +66,21 @@ def get_items(category):
 def remove_ingredient():
     title = 'Remove Ingredient'
 
-    form = Remove_Ingredient_Form
+    form = Remove_Ingredient_Form()
 
     items = Pantry.query.filter_by(user_id=current_user.id).all()
 
-    for i in items:
-        form.pantry.choices.append(i)
+    form.pantry.choices = [(i.user_id, i.ingredient_id) for i in items]
 
     if request.method == 'POST':
-        
+        ingredient = Ingredients.query.filter_by(category=form.category.data).filter_by(id=form.name.data).first()
+
+        delete_ingredient = Pantry(user_id=current_user.id, ingredient_id=ingredient.id)
+        db.session.delete(delete_ingredient)
+        db.session.commit()
+
+        return redirect(url_for('ingredients'))
+    return render_template("remove.html", title=title, form=form)
 
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
