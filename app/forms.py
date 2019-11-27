@@ -32,4 +32,7 @@ class Add_Ingredient_Form(FlaskForm):
     submit = SubmitField('Add Ingredient(s)')
     confirm = SubmitField('Confirm')
 
+class Remove_Ingredient_Form(FlaskForm):
+    pantry = SelectField('Pantry', choices=[])
+    remove = SubmitField('Remove')
 

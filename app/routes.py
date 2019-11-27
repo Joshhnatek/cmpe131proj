@@ -62,6 +62,11 @@ def get_items(category):
 
     return jsonify({'items' : itemsArray})
 
+@app.route('/remove_ingredient')
+def remove_ingredient():
+    title = 'Remove Ingredient'
+    
+
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
