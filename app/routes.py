@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, redirect, url_for, flash, request, jsonify
-from app.forms import User_Form, Registration_Form, Add_Ingredient_Form
+from app.forms import User_Form, Registration_Form, Add_Ingredient_Form, Remove_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Ingredients, Pantry
 from werkzeug.urls import url_parse
@@ -62,10 +62,19 @@ def get_items(category):
 
     return jsonify({'items' : itemsArray})
 
-@app.route('/remove_ingredient')
+@app.route('/remove_ingredient', methods=['GET', 'POST'])
 def remove_ingredient():
     title = 'Remove Ingredient'
-    
+
+    form = Remove_Ingredient_Form
+
+    items = Pantry.query.filter_by(user_id=current_user.id).all()
+
+    for i in items:
+        form.pantry.choices.append(i)
+
+    if request.method == 'POST':
+        
 
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
