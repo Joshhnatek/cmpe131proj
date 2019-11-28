@@ -29,6 +29,10 @@ class Pantry(db.Model):
     def __repr__(self):
         return '{}:{}'.format(self.user_id, self.ingredient_id)
 
+    def get_id(self, user_id, ingredient_id):
+        item = Pantry.query.filter_by(user_id=user_id).filter_by(ingredient_id=ingredient_id)
+        return item.id
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))

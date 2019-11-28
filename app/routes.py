@@ -70,13 +70,13 @@ def remove_ingredient():
 
     items = Pantry.query.filter_by(user_id=current_user.id).all()
 
-    form.pantry.choices = [(i.user_id, i.ingredient_id) for i in items]
+    form.pantry.choices = [(i.ingredient_id, i.ingredient_id) for i in items]
 
     if request.method == 'POST':
-        ingredient = Ingredients.query.filter_by(category=form.category.data).filter_by(id=form.name.data).first()
+        target = Ingredients.query.get(form.pantry.data)
+        ingredient = Pantry.query.filter_by(user_id=current_user.id, ingredient_id=target.id).first()
 
-        delete_ingredient = Pantry(user_id=current_user.id, ingredient_id=ingredient.id)
-        db.session.delete(delete_ingredient)
+        db.session.delete(ingredient)
         db.session.commit()
 
         return redirect(url_for('ingredients'))
