@@ -25,13 +25,10 @@ class Pantry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, index=True)
     ingredient_id = db.Column(db.Integer, index=True)
-    
-    def __repr__(self):
-        return '{}:{}'.format(self.user_id, self.ingredient_id)
+    ingredient_name = db.Column(db.String(128), index=True)
 
-    def get_id(self, user_id, ingredient_id):
-        item = Pantry.query.filter_by(user_id=user_id).filter_by(ingredient_id=ingredient_id)
-        return item.id
+    def __repr__(self):
+        return '{}:{}:{}'.format(self.user_id, self.ingredient_id, self.ingredient_name)
 
 @login.user_loader
 def load_user(id):

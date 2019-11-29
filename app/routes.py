@@ -37,11 +37,11 @@ def stock_pantry():
     if request.method == "POST": 
         ingredient = Ingredients.query.filter_by(category=form.category.data).filter_by(id=form.name.data).first()
     
-        if(Pantry.query.filter_by(user_id= current_user.id).filter_by(ingredient_id= ingredient.id).first()):
+        if(Pantry.query.filter_by(user_id= current_user.id, ingredient_id= ingredient.id).first()):
             flash("Selected Ingredient is already in your pantry", Ingredients.query.filter_by(id=ingredient.id).first().name)
             return(redirect(url_for('stock_pantry')))
         else:
-            item = Pantry(user_id = current_user.id, ingredient_id = ingredient.id)
+            item = Pantry(user_id = current_user.id, ingredient_id = ingredient.id, ingredient_name=ingredient.name)
             db.session.add(item)
             db.session.commit()
             flash("Added Selected Ingredients!")
@@ -70,7 +70,7 @@ def remove_ingredient():
 
     items = Pantry.query.filter_by(user_id=current_user.id).all()
 
-    form.pantry.choices = [(i.ingredient_id, i.ingredient_id) for i in items]
+    form.pantry.choices = [(i.ingredient_id, i.ingredient_name) for i in items]
 
     if request.method == 'POST':
         target = Ingredients.query.get(form.pantry.data)
