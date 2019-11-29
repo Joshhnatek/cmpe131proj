@@ -3,16 +3,21 @@
     color: white;
     font-family: "Times New Roman", Times, serif;
     font-size:100px;
-
+    text-align: center;
 }
 
 .home_style p    {
     font-size: 20px;
     color: white;
     font-weight: bold;
-    text-shadow: 0 0 3px #000000;
+    text-shadow: 2px 2px 8px #000000;
+}
 
-
+.home_style .about_container{
+    top: 30%;
+    left: 20%;
+    right: 20%;
+    padding: 5%;
 }
 
 .home_style{
@@ -26,5 +31,5 @@
 
 .home_style h3{
     color: white;
-    text-shadow: 2px 2px #000000;
+    text-shadow: 2px 2px 8px #000000;
 }
