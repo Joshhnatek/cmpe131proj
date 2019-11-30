@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Stock Your Pantry</h1>
+<div class="stock_pantry_img">
+    <div class="stock_pantry">
+    <h1>Stock Your Pantry</h1>
 
-<body> 
     <form method = 'POST'>
         {{ form.category }}
         {{ form.name }}
         {{ form.submit }}
-
     </form>
 
     <script>
@@ -32,8 +32,8 @@
             }); 
         }
     </script>
-</body>
-
+    </div>
+</div>
 {% endblock %}
 
 
