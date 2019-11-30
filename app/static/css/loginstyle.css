@@ -8,6 +8,20 @@
     color: #FFC312;
 }
 
+.login-img ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.login-img .error{
+    color: red;
+}
+
+.login-img .success{
+    color: #FFC312;
+}
+
 .login-img a{
     color: darkorange;
 }
@@ -46,11 +60,13 @@
 .input-container{
     display: flex;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .remember{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     color: #FFC312;
 }
 

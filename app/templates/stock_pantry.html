@@ -12,12 +12,12 @@
     </form>
 
     <script>
-        let category_select = document.getElementById('category'); 
+        let category_select = document.getElementById('category');
         let name_select = document.getElementById('name');
 
         category_select.onchange = function(){
-            category = category_select.value; 
-            
+            category = category_select.value;
+
             fetch('/get_items/' + category).then(function(response){
                 response.json().then(function(data){
 
@@ -27,9 +27,9 @@
                         optionHTML += '<option value="' + item.id + '">' + item.name + '</option>';
                     }
 
-                    name_select.innerHTML = optionHTML; 
+                    name_select.innerHTML = optionHTML;
                 });
-            }); 
+            });
         }
     </script>
     </div>
