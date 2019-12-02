@@ -1,33 +1,41 @@
 <html>
     <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <link rel="stylesheet" href='/static/css/basestyle.css'/>
+        <link rel="stylesheet" href='/static/css/loginstyle.css'/>
+        <link rel="stylesheet" href="/static/css/registerstyle.css" />
+        <link rel="stylesheet" href='/static/css/ingredientstyle.css'/>
+        <link rel="stylesheet" href='/static/css/homestyle.css'/>
+        <link rel="stylesheet" href='/static/css/stockpantrystyle.css'/>
+
         {% if title %}
         <title>{{title}}</title>
-        
+
         {% else %}
         <title>Home</title>
         {% endif %}
     </head>
 
     <div>
-        <a href="{{url_for('home')}}">Home</a>
-        {% if current_user.is_anonymous %}
-        <a href="{{url_for('login')}}">Login</a>
-        {% else %}
-        <a href="{{url_for('ingredients')}}">Ingredients</a>
-        <a href="{{url_for('logout')}}">Logout</a>
-        {% endif %}
-
+        <ul class="base_list">
+            <li><a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a></li>
+            {% if current_user.is_anonymous %}
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            {% else %}
+            <li><a href="{{url_for('ingredients')}}">Ingredients</a></li>
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
+            {% endif %}
+        </ul>
     </div>
     <body>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <ul>
-                {% for message in messages %}
-                <li>{{message}}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
        <hr>
        {% block content %}{% endblock %}
     </body>

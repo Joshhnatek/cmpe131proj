@@ -1,0 +1,30 @@
+.base_list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    overflow: hidden;
+
+    /* Makes the nav bar stay while scrolling and fills in white spaces*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.base_list li{
+    float: left;
+}
+
+li a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: #FFC312;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+li a:hover{
+    background-color: dimgray;
+    color: orangered;
+}

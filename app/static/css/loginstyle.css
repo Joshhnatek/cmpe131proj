@@ -1,0 +1,109 @@
+.login-img h4{
+    font-size: 30px;
+    text-align: center;
+    color: #FFC312;
+}
+
+.login-img p{
+    color: #FFC312;
+}
+
+.login-img ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.login-img .error{
+    color: red;
+}
+
+.login-img .success{
+    color: #FFC312;
+}
+
+.login-img a{
+    color: darkorange;
+}
+
+.login-img a:hover{
+    color: orangered;
+}
+
+.login-img{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/static/img/burrito-chicken-delicious-dinner-461198.jpg');
+}
+
+.form-group{
+    color:black;
+    background-color: #FFC312;
+    width: 10px;
+}
+
+.form-check-label{
+    color: white;
+}
+
+.links{
+    font-size: 20px;
+    color: white;
+}
+
+.form-check{
+    text-align: center;
+}
+
+.input-container{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.remember{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #FFC312;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.icon{
+    padding: 15px;
+    background: #FFC312;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+}
+
+.container{
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    max-width: 300px;
+    padding: 16px;
+    background-color: gray;
+    width: 100%;
+}
+
+.btn{
+    background-color: #FFC312;
+    color: black;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    opacity: 0.9;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+

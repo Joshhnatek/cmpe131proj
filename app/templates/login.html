@@ -2,36 +2,53 @@
 
 {% block content %}
 
-        <h4>Login</h4>
-        
-        <form action='' method="post" novalidate>
+<div class="login-img">
+        <form action='' method="post" novalidate class="container">
             {{form.hidden_tag()}}
-            <p>
-               {{form.email.label}}<br>
-               {{form.email(size = 32)}}<br>
-               {% for error in form.email.errors %}
-               <span style="color: red;">[{{error}}]</span>
-               {% endfor %}
-            </p>
+            <h4>Account Login</h4>
 
-            <p>
-                {{form.password.label}}<br>
-                {{form.password(size = 32)}}<br>
-                {% for error in form.password.errors %}
-                <span style="color: red;">[{{error}}]</span>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    {% if category == "login_error" %}
+                        <li class="error">{{message}}</li>
+                    {% elif category == "register_success" %}
+                        <li class="success">{{message}}</li>
+                    {% endif %}
                 {% endfor %}
-            </p>
+            </ul>
+            {% endif %}
+            {% endwith %}
 
-            <p>
+            <div class="input-container">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" class="input-field" id="email" name="email" placeholder="Email">
+            </div>
+
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+
+            <div class="input-container">
+                <i class="fas fa-key icon"></i>
+                <input type="password" class="input-field" id="password" name="password" placeholder="Password">
+            </div>
+
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+
+            <div class="remember">
                 {{form.remember}} {{form.remember.label}}
-            </p>
+            </div>
 
-            <p>
-                {{form.submit}} 
-            </p>
+            <button type="submit" class="btn">Login</button>
+
             <p>
                 New User? <a href="{{url_for('register') }}">Register here!</a>
             </p>
         </form>
-        
-{% endblock %}
+</div>
+            {% endblock %}
+

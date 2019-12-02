@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-        <h1>Hey {{current_user.username}}! </br>Heres Your Virtual Pantry</h1>
-
-        {% if pantry %}
+    <div class = ingredient_list>
+        <div class = ingredient_container>
+            <h1>Hey {{current_user.username}}!<br>Here's Your Virtual Pantry</h1>
+            {% if pantry %}
             <ul>
-            {% for item in pantry %}
-                <li>{{ item }}</li>
-            {% endfor %}
+                {% for item in pantry %}
+                    <li>{{ item.name }}</li>
+                {% endfor %}
             </ul>
-        {% else %}
+            {% else %}
             <h2>Your Pantry is Empty</h2>
-        {% endif %}
+            {% endif %}
+
+            <div class="ingredient_button btn-grp">
+                <a href="{{url_for('stock_pantry')}}" class="btn">Stock Pantry</a>
+                <a href="{{url_for('remove_ingredient')}}" class="btn">Remove Ingredient</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

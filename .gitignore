@@ -1,7 +1,9 @@
 app/__pycache__
 __pycache__
 app/__init__.pyc
-app/venv
+app/.vscode
+app/.idea
+venv/
 *.orig
 /test.py
 .idea/*
