@@ -8,8 +8,6 @@
         <h4>Register Account</h4>
         {{form.hidden_tag()}}
         <p>
-<!--            {{form.username.label}}<br>-->
-<!--            {{form.username(size = 32)}}<br>-->
             <label for="username"><b>Username</b></label>
             <input type="text" id="username" name="username" placeholder="Enter username" required>
             {% for error in form.username.errors %}
@@ -17,8 +15,6 @@
             {% endfor %}
         </p>
         <p>
-<!--            {{form.email.label}}<br>-->
-<!--            {{form.email(size = 32)}}<br>-->
             <label for="email"><b>Email</b></label>
             <input type="text" id="email" name="email" placeholder="Enter email" required>
             {% for error in form.email.errors %}
@@ -26,8 +22,6 @@
             {% endfor %}
         </p>
         <p>
-<!--            {{form.password.label}}<br>-->
-<!--            {{form.password(size = 32)}}<br>-->
             <label for="password"><b>Password</b></label>
             <input type="password" id="password" name="password" placeholder="Enter password" required>
             {% for error in form.password.errors %}
@@ -35,8 +29,6 @@
             {% endfor %}
         </p>
         <p>
-<!--            {{form.confirm_password.label}}<br>-->
-<!--            {{form.confirm_password(size = 32)}}<br>-->
             <label for="confirm_password"><b>Confirm Password</b></label>
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
             {% for error in form.confirm_password.errors %}
@@ -44,7 +36,6 @@
             {% endfor %}
         </p>
         <p>
-<!--            {{form.submit}}-->
             <button type="submit" class="register-btn">Register</button>
         </p>
         </div>
