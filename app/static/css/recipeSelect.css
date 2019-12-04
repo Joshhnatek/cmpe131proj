@@ -1,0 +1,2 @@
+nav ul{height:200px; width:18%;}  /*  this is just for the scroll, we will need more css */
+nav ul{overflow:hidden; overflow-y:scroll;}
