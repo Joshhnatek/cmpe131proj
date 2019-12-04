@@ -12,7 +12,6 @@
     background-image: url('/static/img/7QH4K6AESO.jpg')
     }
 
-
 .register-container{
     position: absolute;
     padding: 16px;
@@ -20,7 +19,7 @@
     left: 75%;
     transform: translate(-50%, -50%);
     background-color: gray;
-    min-width: 40%;
+    min-width: 35%;
 }
 
 .register-container label{
