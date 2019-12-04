@@ -1,6 +1,6 @@
 .remove_container{
-    position: absolute;
-    top: 25%;
+    position: relative;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: gray;
@@ -9,7 +9,10 @@
     padding: 16px;
 }
 
-.remove_container h1{
-    border-bottom: 5px solid #FFC312;
-    padding-bottom: 10px;
+.remove_img{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/static/img/green-basil-leaves-1087897.jpg");
 }
