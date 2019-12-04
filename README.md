@@ -9,6 +9,14 @@
 - Provide a solution to organize user's ingredients by suggesting recipes that they may prepare with what they have.
 - Provide culinary education. 
 
+Working Features:
+- Register for an account.
+- Login to your account.
+- View your virtual pantry.
+
+Currently Working on:
+- Interface to add items to your virtual pantry. 
+
 Functions:
 - User adds ingredients to ingredient lists
 - User requests a list of recipes. 
