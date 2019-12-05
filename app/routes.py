@@ -2,7 +2,7 @@ from app import app, db
 from flask import render_template, redirect, url_for, flash, request, jsonify
 from app.forms import User_Form, Registration_Form, Add_Ingredient_Form, Remove_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Ingredients, Pantry
+from app.models import User, Ingredients, Pantry, recipes, recipeIng
 from werkzeug.urls import url_parse
 
 
@@ -22,6 +22,21 @@ def ingredients():
         pantry.append(i)
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
+
+@app.route("/recipes_search")
+@login_required
+def recipes_search(): 
+    items = Pantry.query.filter_by(user_id=current_user.id).all()
+    available_recipes = []
+    for ingredient in items:
+        recipe_ingredients = recipeIng.query.filter_by(ingredient_id = ingredient.id).all()
+        for r in recipe_ingredients:
+            recipe = recipes.query.filter_by(id = r.recipe_id).first()
+            available_recipes.append(recipe.recipeN)
+
+    return render_template("recipe_list.html", title = "recipes", recipes = available_recipes)
+
+
 
 @app.route("/stock_pantry", methods = ['GET', 'POST'])
 def stock_pantry():

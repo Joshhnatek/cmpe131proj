@@ -47,21 +47,20 @@ class Ingredients(db.Model):
         item = Ingredients.query.filter_by(category='category').filter_by(name='name').first()
         return item.id
 
-class recipes(db.model):
+class recipes(db.Model):
     __tablename__ = 'recipes'
-    recipeid = db.Column(db.Integer, primary_key=True, unique = True )
+    id = db.Column(db.Integer, primary_key=True, unique = True )
     recipeN =  db.Column(db.String(128), index = True)
-    #recipeI = db.Column()
-
+    ingredients = db.relationship('recipeIng', backref='recipe')
     def __repr__(self):
-        return '{}:{}'.format(self.recipeid, self.recipeN) #might have to connect child
+        return '{}:{}'.format(self.id, self.recipeN) #might have to connect child
 
-class recipeIng(db.model):
+class recipeIng(db.Model):
     __tablename__ = 'recipeIng'
-    recipe_id = Column(db.Integer, db.ForeignKey('recipes.recipeid')) #not sure if need index
-    recipe_ingr = (db.String(128), index =True, primary_key = True)
-    recipe_id = (db.Integer, db.ForeignKey('Ingredients.id')) #connected ingredient id just in case
-    recipe_amount = (db.Integer, index = True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id')) #not sure if need index
+    ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredient.id')) #connected ingredient id just in case
+    ingredient_ammount = db.Column(db.Integer, index = True)
 
     def __repr__(self):
-        return '{}:{}:{}:{}'.format(self.recipe_id, self.recipe_ingr, self.recipe_id, self.recipe_amount)
+        return '{}:{}:{}:{}'.format(self.id, self.recipe_id, self.ingredient_id, self.ingredient_ammount)

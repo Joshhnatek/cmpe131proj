@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div >
+        <div >
+            <h1>Hey {{current_user.username}}!<br>Here's what you can cook!</h1>
+            {% if recipes %}
+            <ul>
+                {% for item in recipes %}
+                    <li>{{ item}}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <h2>NOTHING</h2>
+            {% endif %}
+    </div>
+{% endblock %}
