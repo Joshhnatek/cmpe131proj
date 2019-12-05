@@ -11,6 +11,18 @@
         {{ form.submit }}
     </form>
 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+            {% if category == "stock_error" %}
+            <li class="error">{{message}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
     <script>
         let category_select = document.getElementById('category');
         let name_select = document.getElementById('name');

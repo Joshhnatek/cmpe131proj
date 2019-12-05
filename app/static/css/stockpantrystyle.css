@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /*background-image: url("");*/
+    background-image: url("/static/img/peppers-and-other-vegetables-flatlay.jpg");
 }
 
 .stock_pantry{
@@ -15,4 +15,8 @@
     color: #FFC312;
     text-align: center;
     padding: 16px;
+}
+
+.stock_pantry .error{
+    color: red;
 }

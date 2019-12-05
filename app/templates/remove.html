@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method = POST>
-        {{ form.pantry }}
-        <br>
-        {{ form.remove }}
-    </form>
+<div class="remove_img">
+    <div class="remove_container">
+        <h1>Remove an ingredient</h1>
+        <form method = POST>
+            {{ form.pantry }}
+            {{ form.remove }}
+        </form>
+    </div>
+</div>
 {% endblock %}

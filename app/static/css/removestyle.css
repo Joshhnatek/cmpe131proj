@@ -1,0 +1,18 @@
+.remove_container{
+    position: relative;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    color: #FFC312;
+    text-align: center;
+    padding: 16px;
+}
+
+.remove_img{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/static/img/green-basil-leaves-1087897.jpg");
+}
