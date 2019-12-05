@@ -38,13 +38,13 @@ def stock_pantry():
         ingredient = Ingredients.query.filter_by(category=form.category.data).filter_by(id=form.name.data).first()
     
         if(Pantry.query.filter_by(user_id= current_user.id, ingredient_id= ingredient.id).first()):
-            flash("Selected Ingredient is already in your pantry", Ingredients.query.filter_by(id=ingredient.id).first().name)
+            flash("Selected Ingredient is already in your pantry", "stock_error")
             return(redirect(url_for('stock_pantry')))
         else:
             item = Pantry(user_id = current_user.id, ingredient_id = ingredient.id, ingredient_name=ingredient.name)
             db.session.add(item)
             db.session.commit()
-            flash("Added Selected Ingredients!")
+            flash("Added Selected Ingredients!", "stock_success")
             return redirect(url_for('ingredients'))
         
     return render_template("stock_pantry.html", title = title, form = form)
@@ -78,7 +78,7 @@ def remove_ingredient():
 
         db.session.delete(ingredient)
         db.session.commit()
-
+        flash("Removed selected ingredient", "remove_success")
         return redirect(url_for('ingredients'))
     return render_template("remove.html", title=title, form=form)
 

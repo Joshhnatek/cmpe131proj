@@ -16,8 +16,23 @@
 
             <div class="ingredient_button btn-grp">
                 <a href="{{url_for('stock_pantry')}}" class="btn">Stock Pantry</a>
+                {% if pantry %}
                 <a href="{{url_for('remove_ingredient')}}" class="btn">Remove Ingredient</a>
+                {% endif %}
             </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                {% if category == "stock_success" or category == "remove_success" %}
+                <li class="success">{{message}}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
         </div>
     </div>
 {% endblock %}

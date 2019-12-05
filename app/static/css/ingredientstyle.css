@@ -1,5 +1,5 @@
 .ingredient_list{
-    /*background-image: url();*/
+    background-image: url("/static/img/AdobeStock_89974773.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -17,10 +17,17 @@
     text-align: center;
 }
 
+.ingredient_container h1{
+    border-bottom: 5px solid #FFC312;
+}
+
 .ingredient_container ul{
-    border-top: 5px solid #FFC312;
     padding: 0;
     list-style-type: none;
+}
+
+.ingredient_list .success{
+    color: #FFC312;
 }
 
 .ingredient_button{

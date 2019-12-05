@@ -1,55 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<head>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-
-<style>
-        h1   {
-                text-shadow: 2px 2px 8px #FF0000 ;
-                color: white;
-                font-family: "Times New Roman", Times, serif;
-                font-size:100;
-
-        }
-        p    {
-                font-size: 20;
-                color: white;
-                font-weight: bold;
-                text-shadow: 0 0 3px #FF0000;
-
-
-        }
-
-        body{
-                background: url("https://cdn.pixabay.com/photo/2017/12/10/14/47/piza-3010062_960_720.jpg");
-                height: 100%;
-
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                overflow: auto;
-
-        }
-
-        h3{
-                color: white;
-                text-shadow: 2px 2px #FF0000;
-        }
-
-</style>
-<body class="bg-light">
-
-<div class="container">
-        <div class="row justify-content-center">
-
+<div class="home_style">
                 <h1>Broke 'n Hungry</h1>
-                <div>
-
-
+                <div class="about_container">
                         <h3>About Us:</h3>
                         <p>Many of us have ingredients and food items in stock but
                                 are not sure on the available and creative ways
@@ -57,5 +11,7 @@
                                 list of your ingredients and food items and
                                 present you with recipes that you can make!
                         </p>
-                        <body>
-                        {% endblock %}
+                </div>
+</div>
+
+{% endblock %}

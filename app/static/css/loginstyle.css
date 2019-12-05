@@ -86,9 +86,10 @@
 
 .container{
     position: absolute;
-    top: 25%;
-    right: 5%;
-    max-width: 300px;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    max-width: 25%;
     padding: 16px;
     background-color: gray;
     width: 100%;
