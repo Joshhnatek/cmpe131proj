@@ -1,8 +1,9 @@
-from app import app, db
+from flask import current_app as app
+from . import db, login
 from flask import render_template, redirect, url_for, flash, request, jsonify
-from app.forms import User_Form, Registration_Form, Add_Ingredient_Form, Remove_Ingredient_Form
+from .forms import User_Form, Registration_Form, Add_Ingredient_Form, Remove_Ingredient_Form
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Ingredients, Pantry, recipes, recipeIng
+from .models import User, Ingredients, Pantry, recipes, recipeIng
 from werkzeug.urls import url_parse
 
 
@@ -14,11 +15,12 @@ def home():
 @app.route("/ingredients")
 @login_required
 def ingredients():
-    items = Pantry.query.filter_by(user_id=current_user.id).all()
+    # items = Pantry.query.filter_by(user_id=current_user.id).all()
+    items = get_users_items(current_user.id)
     pantry = []
     
     for ingredient in items:
-        i = Ingredients.query.filter_by(id=ingredient.ingredient_id).first()
+        i = get_ingredient_name(ingredient.ingredient_id) 
         pantry.append(i)
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
