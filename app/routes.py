@@ -16,11 +16,11 @@ def home():
 @login_required
 def ingredients():
     # items = Pantry.query.filter_by(user_id=current_user.id).all()
-    items = get_users_items(current_user.id)
+    items = Pantry.get_users_items(current_user.id)
     pantry = []
     
     for ingredient in items:
-        i = get_ingredient_name(ingredient.ingredient_id) 
+        i = Ingredients.get_ingredient_name(ingredient.ingredient_id) 
         pantry.append(i)
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
@@ -31,7 +31,7 @@ def recipes_search():
     items = Pantry.query.filter_by(user_id=current_user.id).all()
     available_recipes = []
     for ingredient in items:
-        recipe_ingredients = recipeIng.query.filter_by(ingredient_id = ingredient.id).all()
+        recipe_ingredients = recipeIng.query.filter_by(ingredient_id = ingredient.ingredient_id).all()
         for r in recipe_ingredients:
             recipe = recipes.query.filter_by(id = r.recipe_id).first()
             available_recipes.append(recipe.recipeN)

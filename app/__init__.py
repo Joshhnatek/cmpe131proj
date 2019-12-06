@@ -10,7 +10,7 @@ from flask_migrate import Migrate
 
 db = SQLAlchemy()
 login = LoginManager()
-migrate = Migrate(app, db)
+
 
 
 
@@ -25,7 +25,8 @@ def create_app(test_config = None):
 
     db.init_app(app)
     login.init_app(app)
-    login.login_view = 'login'
+    login.login_view = 'users.login'
+    migrate = Migrate(app, db)
     
 
     with app.app_context():

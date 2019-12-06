@@ -30,6 +30,10 @@ class Pantry(db.Model):
     def __repr__(self):
         return '{}:{}:{}'.format(self.user_id, self.ingredient_id, self.ingredient_name)
 
+    def get_users_items(users_id):
+        items = Pantry.query.filter_by(user_id=users_id).all()
+        return items
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
@@ -46,6 +50,10 @@ class Ingredients(db.Model):
     def get_id(self, category, name):
         item = Ingredients.query.filter_by(category='category').filter_by(name='name').first()
         return item.id
+
+    def get_ingredient_name(id):
+        ingredient_name = Ingredients.query.filter_by(id = id).first()
+        return ingredient_name 
 
 class recipes(db.Model):
     __tablename__ = 'recipes'
