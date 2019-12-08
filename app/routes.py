@@ -15,7 +15,6 @@ def home():
 @app.route("/ingredients")
 @login_required
 def ingredients():
-    # items = Pantry.query.filter_by(user_id=current_user.id).all()
     items = Pantry.get_users_items(current_user.id)
     pantry = []
     

@@ -47,13 +47,15 @@ class Ingredients(db.Model):
     def __repr__(self):
         return '{}:{}:{}'.format(self.category, self.name, self.id)
 
-    def get_id(self, category, name):
-        item = Ingredients.query.filter_by(category='category').filter_by(name='name').first()
+    def get_id(category, name):
+        item = Ingredients.query.filter_by(category=category).filter_by(name=name).first()
         return item.id
 
     def get_ingredient_name(id):
-        ingredient_name = Ingredients.query.filter_by(id = id).first()
-        return ingredient_name 
+        ingredient = Ingredients.query.filter_by(id = id).first()
+        if(ingredient):
+            return ingredient.name
+        else: return None
 
 class recipes(db.Model):
     __tablename__ = 'recipes'
@@ -62,6 +64,12 @@ class recipes(db.Model):
     ingredients = db.relationship('recipeIng', backref='recipe')
     def __repr__(self):
         return '{}:{}'.format(self.id, self.recipeN) #might have to connect child
+
+    def get_name(r_id):
+        recipe = recipes.query.filter_by(id = r_id).first()
+        if(recipe): 
+            return recipe.name
+        else: return None
 
 class recipeIng(db.Model):
     __tablename__ = 'recipeIng'
