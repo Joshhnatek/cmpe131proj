@@ -62,6 +62,7 @@ class recipes(db.Model):
     id = db.Column(db.Integer, primary_key=True, unique = True )
     recipeN =  db.Column(db.String(128), index = True)
     ingredients = db.relationship('recipeIng', backref='recipe')
+    essentialIng = db.Column(db.Integer)
     def __repr__(self):
         return '{}:{}'.format(self.id, self.recipeN) #might have to connect child
 
@@ -80,3 +81,5 @@ class recipeIng(db.Model):
 
     def __repr__(self):
         return '{}:{}:{}:{}'.format(self.id, self.recipe_id, self.ingredient_id, self.ingredient_ammount)
+
+    
