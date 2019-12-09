@@ -17,6 +17,7 @@ login.login_view = 'login'
 
 @app.before_first_request
 def create_tables():
+    """Creates our database models first so the web application can see them."""
     from app.models import User, Ingredients, Pantry, recipes, recipeIng
     db.create_all()
 
