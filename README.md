@@ -1,4 +1,5 @@
 # BROKE 'n HUNGRY
+[![Build Status](https://travis-ci.com/Joshhnatek/cmpe131proj.svg?branch=master)](https://travis-ci.com/Joshhnatek/cmpe131proj)
 ### Status: WIP
 
 ## Problem Statement: 
