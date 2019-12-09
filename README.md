@@ -26,3 +26,5 @@ Functions:
 - At any recipe’s step, users can add suggestions on alternate procedure on that step. 
 - When a recipe is selected, the application will display a recipe’s steps. 
 
+Heroku:
+    https://broke-n-hungry.herokuapp.com/
