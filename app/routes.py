@@ -9,6 +9,11 @@ from werkzeug.urls import url_parse
 @app.route("/")
 @app.route("/home")
 def home():
+    """Brings the user to the homepage.
+
+    Returns:
+        The HTML for the homepage
+    """
     return render_template("home.html")
 
 @app.route("/ingredients")
@@ -25,7 +30,7 @@ def ingredients():
 
 @app.route("/recipes_search")
 @login_required
-def recipes_search(): 
+def recipes_search():
     items = Pantry.query.filter_by(user_id=current_user.id).all()
     available_recipes = []
     for ingredient in items:
