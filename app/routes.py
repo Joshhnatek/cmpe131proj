@@ -97,6 +97,11 @@ def stock_pantry():
      
 @app.route('/get_items/<category>')
 def get_items(category):
+    """Gets the ingredient information from the ingredients database
+
+    Returns:
+        A list of ingredients from the ingredients database
+    """
     collection = Ingredients.query.filter_by(category=category).all()
     
     itemsArray = []

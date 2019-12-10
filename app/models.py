@@ -126,8 +126,8 @@ class recipeIng(db.Model):
     """Contains the information on .
 
         Attributes:
-            __tablename__ (string): Name for .
-            recipe_id (int): ID for each .
+            __tablename__ (string): Name for recipe ingredient database.
+            recipe_id (int): ID for each recipe.
             ingredient_id (int): Ingredient's ID.
             ingredient_ammount (int): Amount of the ingredient.
         """
