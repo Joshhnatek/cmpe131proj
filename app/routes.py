@@ -43,14 +43,23 @@ def recipes_search():
         The HTML for recipes web page.
     """
     items = Pantry.query.filter_by(user_id=current_user.id).all()
-    available_recipes = []
+    available_recipes = {}
+    possible_recipes = []
     for ingredient in items:
-        recipe_ingredients = recipeIng.query.filter_by(ingredient_id = ingredient.id).all()
+        recipe_ingredients = recipeIng.query.filter_by(ingredient_id = ingredient.ingredient_id).all()
         for r in recipe_ingredients:
             recipe = recipes.query.filter_by(id = r.recipe_id).first()
-            available_recipes.append(recipe.recipeN)
+            if (recipe.id not in available_recipes): 
+                available_recipes[recipe.id] = 1
+            else:
+                available_recipes[recipe.id] += 1 
 
-    return render_template("recipe_list.html", title = "recipes", recipes = available_recipes)
+    for recipe_id in available_recipes:
+        recipe = recipes.query.filter_by(id= recipe_id).first()
+        if recipe.essentialIng == available_recipes[recipe_id]:
+            possible_recipes.append(recipe.recipeN)
+
+    return render_template("recipe_list.html", title = "recipes", recipes = possible_recipes)
 
 
 

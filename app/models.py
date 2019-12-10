@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(128))
 
+
     def __repr__(self):
         """Prints the current user's username."""
         return '{}'.format(self.username)
@@ -92,7 +93,7 @@ class Ingredients(db.Model):
         """Prints the ingredient's category, name and ID."""
         return '{}:{}:{}'.format(self.category, self.name, self.id)
 
-    def get_id(self, category, name):
+    def get_id(category, name):
         """Returns the ingredient's ID.
 
         Args:
@@ -102,7 +103,7 @@ class Ingredients(db.Model):
         Returns:
             If the ingredient is found, returns the ingredient ID from the database. Otherwise, returns None.
         """
-        item = Ingredients.query.filter_by(category='category').filter_by(name='name').first()
+        item = Ingredients.query.filter_by(category=category).filter_by(name=name).first()
         return item.id
 
 class recipes(db.Model):
@@ -118,7 +119,6 @@ class recipes(db.Model):
     id = db.Column(db.Integer, primary_key=True, unique = True )
     recipeN =  db.Column(db.String(128), index = True)
     ingredients = db.relationship('recipeIng', backref='recipe')
-
     def __repr__(self):
         return '{}:{}'.format(self.id, self.recipeN) #might have to connect child
 
