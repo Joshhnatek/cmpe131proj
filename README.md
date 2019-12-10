@@ -14,14 +14,18 @@ Working Features:
 - Register for an account.
 - Login to your account.
 - View your virtual pantry.
+- Interface to add and delete items to and from your virtual pantry.
+- Return a list of recipes that you can prepare with your available items.
 
 Currently Working on:
-- Interface to add items to your virtual pantry. 
+- Thinking of new functions to include and imporve present ones
 
 Functions:
 - User adds ingredients to ingredient lists
 - User requests a list of recipes. 
 - Application uses list of available ingredients to return recipes with matching ingredients.
+
+Future Functions: 
 - Users add recipes: Name, steps, ingredients. 
 - Users rate other user contributed recipes. 
 - At any recipe’s step, users can add suggestions on alternate procedure on that step. 
