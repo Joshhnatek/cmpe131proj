@@ -37,4 +37,6 @@ Heroku:
 To Run Tests: 
     test_*.py files are in directory: cmpe131proj/
     run pytest to run tests. 
-   
+
+Sphinx Documentation:
+    HTML documentation can be found at docs/build
