@@ -29,7 +29,7 @@ def ingredients():
     pantry = []
     
     for ingredient in items:
-        i = get_ingredient_name(ingredient.ingredient_id) 
+        i = Ingredients.get_ingredient_name(ingredient.ingredient_id) 
         pantry.append(i)
     title = "Virtual Pantry"
     return render_template("ingredient_list.html", title = title, pantry = pantry)
