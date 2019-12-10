@@ -10,13 +10,22 @@ from werkzeug.urls import url_parse
 @app.route("/")
 @app.route("/home")
 def home():
+    """Brings the user to the homepage.
+
+    Returns:
+        The HTML for the homepage
+    """
     return render_template("home.html")
 
 @app.route("/ingredients")
 @login_required
 def ingredients():
-    # items = Pantry.query.filter_by(user_id=current_user.id).all()
-    items = get_users_items(current_user.id)
+    """Brings the user to the virtual pantry web page.
+
+    Returns:
+        The HTML for virtual web page.
+    """
+    items = Pantry.query.filter_by(user_id=current_user.id).all()
     pantry = []
     
     for ingredient in items:
@@ -27,7 +36,12 @@ def ingredients():
 
 @app.route("/recipes_search")
 @login_required
-def recipes_search(): 
+def recipes_search():
+    """Brings the user to the recipes web page.
+
+    Returns:
+        The HTML for recipes web page.
+    """
     items = Pantry.query.filter_by(user_id=current_user.id).all()
     available_recipes = []
     for ingredient in items:
@@ -42,6 +56,12 @@ def recipes_search():
 
 @app.route("/stock_pantry", methods = ['GET', 'POST'])
 def stock_pantry():
+    """Brings the user to the stock pantry web page.
+
+    Returns:
+        The HTML for stock pantry web page.
+        If the user adds an existing ingredient, returns stock pantry HTML. Otherwise, return virtual pantry HTML.
+    """
     title = "Stock Pantry"
 
     form = Add_Ingredient_Form()
@@ -81,6 +101,12 @@ def get_items(category):
 
 @app.route('/remove_ingredient', methods=['GET', 'POST'])
 def remove_ingredient():
+    """Brings the user to the remove ingredient web page.
+
+    Returns:
+        The HTML for remove ingredient web page.
+        When the user submits the form, returns virtual pantry HTML.
+    """
     title = 'Remove Ingredient'
 
     form = Remove_Ingredient_Form()
@@ -101,6 +127,12 @@ def remove_ingredient():
 
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
+    """Brings the user to the login web page.
+
+    Returns:
+        The HTML for the login web page.
+        If user is not found or password was incorrect, return login HTML. Otherwise, return home HTML.
+    """
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = User_Form()
@@ -119,6 +151,12 @@ def login():
 
 @app.route("/register", methods = ['GET', 'POST'])
 def register():
+    """Brings the user to the register user web page.
+
+    Returns:
+        The HTML for the register user web page.
+        If the form was submitted successfully, returns the login HTML.
+    """
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = Registration_Form()
@@ -133,6 +171,11 @@ def register():
 
 @app.route("/logout")
 def logout():
+    """Logs the current user off.
+
+    Returns:
+        The HTML for the homepage.
+    """
     logout_user()
     return redirect(url_for('home'))
 
