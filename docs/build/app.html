@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>app package &#8212; Broke &#39;n Hungry 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="app-package">
+<h1>app package<a class="headerlink" href="#app-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-app.config">
+<span id="app-config-module"></span><h2>app.config module<a class="headerlink" href="#module-app.config" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.config.Config">
+<em class="property">class </em><code class="sig-prename descclassname">app.config.</code><code class="sig-name descname">Config</code><a class="headerlink" href="#app.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="app.config.Config.SECRET_KEY">
+<code class="sig-name descname">SECRET_KEY</code><em class="property"> = 'something something'</em><a class="headerlink" href="#app.config.Config.SECRET_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.config.Config.SQLALCHEMY_DATABASE_URI">
+<code class="sig-name descname">SQLALCHEMY_DATABASE_URI</code><em class="property"> = 'sqlite:///app.db'</em><a class="headerlink" href="#app.config.Config.SQLALCHEMY_DATABASE_URI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.config.Config.SQLALCHEMY_TRACK_MODIFICATIONS">
+<code class="sig-name descname">SQLALCHEMY_TRACK_MODIFICATIONS</code><em class="property"> = False</em><a class="headerlink" href="#app.config.Config.SQLALCHEMY_TRACK_MODIFICATIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.forms">
+<span id="app-forms-module"></span><h2>app.forms module<a class="headerlink" href="#module-app.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.forms.Add_Ingredient_Form">
+<em class="property">class </em><code class="sig-prename descclassname">app.forms.</code><code class="sig-name descname">Add_Ingredient_Form</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.forms.Add_Ingredient_Form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<p>Contains all the fields needed for adding ingredients.</p>
+<dl class="attribute">
+<dt id="app.forms.Add_Ingredient_Form.category">
+<code class="sig-name descname">category</code><em class="property"> = &lt;UnboundField(SelectField, ('Category',), {'choices': []})&gt;</em><a class="headerlink" href="#app.forms.Add_Ingredient_Form.category" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Add_Ingredient_Form.confirm">
+<code class="sig-name descname">confirm</code><em class="property"> = &lt;UnboundField(SubmitField, ('Confirm',), {})&gt;</em><a class="headerlink" href="#app.forms.Add_Ingredient_Form.confirm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Add_Ingredient_Form.name">
+<code class="sig-name descname">name</code><em class="property"> = &lt;UnboundField(SelectField, ('Name',), {'choices': []})&gt;</em><a class="headerlink" href="#app.forms.Add_Ingredient_Form.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Add_Ingredient_Form.submit">
+<code class="sig-name descname">submit</code><em class="property"> = &lt;UnboundField(SubmitField, ('Add Ingredient(s)',), {})&gt;</em><a class="headerlink" href="#app.forms.Add_Ingredient_Form.submit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.forms.Registration_Form">
+<em class="property">class </em><code class="sig-prename descclassname">app.forms.</code><code class="sig-name descname">Registration_Form</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.forms.Registration_Form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<p>Contains the fields needed for user registration.</p>
+<dl class="attribute">
+<dt id="app.forms.Registration_Form.confirm_password">
+<code class="sig-name descname">confirm_password</code><em class="property"> = &lt;UnboundField(PasswordField, ('Confirm Password',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;, &lt;wtforms.validators.EqualTo object&gt;]})&gt;</em><a class="headerlink" href="#app.forms.Registration_Form.confirm_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Registration_Form.email">
+<code class="sig-name descname">email</code><em class="property"> = &lt;UnboundField(StringField, ('Email',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;, &lt;wtforms.validators.Email object&gt;]})&gt;</em><a class="headerlink" href="#app.forms.Registration_Form.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Registration_Form.password">
+<code class="sig-name descname">password</code><em class="property"> = &lt;UnboundField(PasswordField, ('Password',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#app.forms.Registration_Form.password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Registration_Form.submit">
+<code class="sig-name descname">submit</code><em class="property"> = &lt;UnboundField(SubmitField, ('Register',), {})&gt;</em><a class="headerlink" href="#app.forms.Registration_Form.submit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Registration_Form.username">
+<code class="sig-name descname">username</code><em class="property"> = &lt;UnboundField(StringField, ('Username',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#app.forms.Registration_Form.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.forms.Registration_Form.validate_email">
+<code class="sig-name descname">validate_email</code><span class="sig-paren">(</span><em class="sig-param">email</em><span class="sig-paren">)</span><a class="headerlink" href="#app.forms.Registration_Form.validate_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a email is already in the user database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>email</strong> (<em>string</em>) – The email inputted by the user.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValidationError</strong> – Email is already in user database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.forms.Registration_Form.validate_username">
+<code class="sig-name descname">validate_username</code><span class="sig-paren">(</span><em class="sig-param">username</em><span class="sig-paren">)</span><a class="headerlink" href="#app.forms.Registration_Form.validate_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a username is already in the user database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>username</strong> (<em>string</em>) – The username inputted by the user.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValidationError</strong> – Username is already in user database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.forms.Remove_Ingredient_Form">
+<em class="property">class </em><code class="sig-prename descclassname">app.forms.</code><code class="sig-name descname">Remove_Ingredient_Form</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.forms.Remove_Ingredient_Form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<p>Contains all the fields needed for removing ingredients.</p>
+<dl class="attribute">
+<dt id="app.forms.Remove_Ingredient_Form.pantry">
+<code class="sig-name descname">pantry</code><em class="property"> = &lt;UnboundField(SelectField, ('Pantry',), {'choices': []})&gt;</em><a class="headerlink" href="#app.forms.Remove_Ingredient_Form.pantry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.Remove_Ingredient_Form.remove">
+<code class="sig-name descname">remove</code><em class="property"> = &lt;UnboundField(SubmitField, ('Remove Ingredient',), {})&gt;</em><a class="headerlink" href="#app.forms.Remove_Ingredient_Form.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.forms.User_Form">
+<em class="property">class </em><code class="sig-prename descclassname">app.forms.</code><code class="sig-name descname">User_Form</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.forms.User_Form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<p>Contains the fields needed for the user login.</p>
+<dl class="attribute">
+<dt id="app.forms.User_Form.email">
+<code class="sig-name descname">email</code><em class="property"> = &lt;UnboundField(StringField, ('Email',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#app.forms.User_Form.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.User_Form.password">
+<code class="sig-name descname">password</code><em class="property"> = &lt;UnboundField(PasswordField, ('Password',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#app.forms.User_Form.password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.User_Form.remember">
+<code class="sig-name descname">remember</code><em class="property"> = &lt;UnboundField(BooleanField, ('Remember Me',), {})&gt;</em><a class="headerlink" href="#app.forms.User_Form.remember" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.forms.User_Form.submit">
+<code class="sig-name descname">submit</code><em class="property"> = &lt;UnboundField(SubmitField, ('Login',), {})&gt;</em><a class="headerlink" href="#app.forms.User_Form.submit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.ingredients_list">
+<span id="app-ingredients-list-module"></span><h2>app.ingredients_list module<a class="headerlink" href="#module-app.ingredients_list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-app.models">
+<span id="app-models-module"></span><h2>app.models module<a class="headerlink" href="#module-app.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.models.Ingredients">
+<em class="property">class </em><code class="sig-prename descclassname">app.models.</code><code class="sig-name descname">Ingredients</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Ingredients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Contains the information on all our available ingredients.</p>
+<dl class="attribute">
+<dt id="app.models.Ingredients.__tablename__">
+<code class="sig-name descname">__tablename__</code><a class="headerlink" href="#app.models.Ingredients.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name for ingredient database model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Ingredients.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#app.models.Ingredients.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique ID assigned to each ingredient.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Ingredients.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#app.models.Ingredients.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ingredient’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Ingredients.category">
+<code class="sig-name descname">category</code><a class="headerlink" href="#app.models.Ingredients.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ingredient’s category name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">category</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.Ingredients.get_id">
+<code class="sig-name descname">get_id</code><span class="sig-paren">(</span><em class="sig-param">category</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Ingredients.get_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ingredient’s ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>category</strong> (<em>string</em>) – The ingredient’s category.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – The ingredient’s name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If the ingredient is found, returns the ingredient ID from the database. Otherwise, returns None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">id</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">name</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.models.Pantry">
+<em class="property">class </em><code class="sig-prename descclassname">app.models.</code><code class="sig-name descname">Pantry</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Pantry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Contains the information on the users’ virtual pantries.</p>
+<dl class="attribute">
+<dt id="app.models.Pantry.__tablename__">
+<code class="sig-name descname">__tablename__</code><a class="headerlink" href="#app.models.Pantry.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name for virtual pantry database model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Pantry.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#app.models.Pantry.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID for each user and ingredient combination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Pantry.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#app.models.Pantry.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>User’s ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Pantry.ingredient_id">
+<code class="sig-name descname">ingredient_id</code><a class="headerlink" href="#app.models.Pantry.ingredient_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ingredient’s ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.Pantry.ingredient_name">
+<code class="sig-name descname">ingredient_name</code><a class="headerlink" href="#app.models.Pantry.ingredient_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ingredient’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">id</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">ingredient_id</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">ingredient_name</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">user_id</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.models.User">
+<em class="property">class </em><code class="sig-prename descclassname">app.models.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_login.mixins.UserMixin</span></code></p>
+<p>Contains the information on all registered users.</p>
+<dl class="attribute">
+<dt id="app.models.User.__tablename__">
+<code class="sig-name descname">__tablename__</code><a class="headerlink" href="#app.models.User.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name for user database model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.User.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#app.models.User.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique ID assigned to each user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.User.username">
+<code class="sig-name descname">username</code><a class="headerlink" href="#app.models.User.username" title="Permalink to this definition">¶</a></dt>
+<dd><p>User’s username.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.User.email">
+<code class="sig-name descname">email</code><a class="headerlink" href="#app.models.User.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>User’s email address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.User.password_hash">
+<code class="sig-name descname">password_hash</code><a class="headerlink" href="#app.models.User.password_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>User’s password after hashing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.User.check_password">
+<code class="sig-name descname">check_password</code><span class="sig-paren">(</span><em class="sig-param">password</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.User.check_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the user inputted the same password</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>string</em>) – The second password the user inputted to the form.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If passwords match, returns True. Otherwise, returns False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">email</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">id</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">password_hash</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.User.set_password">
+<code class="sig-name descname">set_password</code><span class="sig-paren">(</span><em class="sig-param">password</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.User.set_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hashes user’s input password and sets it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>string</em>) – The password the user inputted to the form.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">username</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="app.models.load_user">
+<code class="sig-prename descclassname">app.models.</code><code class="sig-name descname">load_user</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.load_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the user’s ID from the user database model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – The user’s ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If the ID is found, returns the user information from the database. Otherwise, returns None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="app.models.recipeIng">
+<em class="property">class </em><code class="sig-prename descclassname">app.models.</code><code class="sig-name descname">recipeIng</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.recipeIng" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Contains the information on .</p>
+<dl class="attribute">
+<dt id="app.models.recipeIng.__tablename__">
+<code class="sig-name descname">__tablename__</code><a class="headerlink" href="#app.models.recipeIng.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name for recipe ingredient database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipeIng.recipe_id">
+<code class="sig-name descname">recipe_id</code><a class="headerlink" href="#app.models.recipeIng.recipe_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID for each recipe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipeIng.ingredient_id">
+<code class="sig-name descname">ingredient_id</code><a class="headerlink" href="#app.models.recipeIng.ingredient_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ingredient’s ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipeIng.ingredient_ammount">
+<code class="sig-name descname">ingredient_ammount</code><a class="headerlink" href="#app.models.recipeIng.ingredient_ammount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of the ingredient.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipeIng.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#app.models.recipeIng.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">ingredient_ammount</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">ingredient_id</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipeIng.recipe">
+<code class="sig-name descname">recipe</code><a class="headerlink" href="#app.models.recipeIng.recipe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">recipe_id</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.models.recipes">
+<em class="property">class </em><code class="sig-prename descclassname">app.models.</code><code class="sig-name descname">recipes</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.recipes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Model</span></code></p>
+<p>Contains the information on all available recipes.</p>
+<dl class="attribute">
+<dt id="app.models.recipes.__tablename__">
+<code class="sig-name descname">__tablename__</code><a class="headerlink" href="#app.models.recipes.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name for recipe database model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipes.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#app.models.recipes.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID for each recipe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipes.recipeN">
+<code class="sig-name descname">recipeN</code><a class="headerlink" href="#app.models.recipes.recipeN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recipe name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.recipes.ingredients">
+<code class="sig-name descname">ingredients</code><a class="headerlink" href="#app.models.recipes.ingredients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relationship with recipeIng database model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">id</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">ingredients</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">recipeN</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.routes">
+<span id="app-routes-module"></span><h2>app.routes module<a class="headerlink" href="#module-app.routes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="app.routes.get_items">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">get_items</code><span class="sig-paren">(</span><em class="sig-param">category</em><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.get_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the ingredient information from the ingredients database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of ingredients from the ingredients database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.home">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">home</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the homepage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for the homepage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.ingredients">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">ingredients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.ingredients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the virtual pantry web page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for virtual web page.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.login">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the login web page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for the login web page.
+If user is not found or password was incorrect, return login HTML. Otherwise, return home HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.logout">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">logout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs the current user off.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for the homepage.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.recipes_search">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">recipes_search</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.recipes_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the recipes web page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for recipes web page.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.register">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the register user web page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for the register user web page.
+If the form was submitted successfully, returns the login HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.remove_ingredient">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">remove_ingredient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.remove_ingredient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the remove ingredient web page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for remove ingredient web page.
+When the user submits the form, returns virtual pantry HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.routes.stock_pantry">
+<code class="sig-prename descclassname">app.routes.</code><code class="sig-name descname">stock_pantry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.routes.stock_pantry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brings the user to the stock pantry web page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The HTML for stock pantry web page.
+If the user adds an existing ingredient, returns stock pantry HTML. Otherwise, return virtual pantry HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-app">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="app.create_tables">
+<code class="sig-prename descclassname">app.</code><code class="sig-name descname">create_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.create_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates our database models first so the web application can see them.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Broke 'n Hungry</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Emil Agonoy, Zelin Cai, Joshua Hnatek, Duy Nguyen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
