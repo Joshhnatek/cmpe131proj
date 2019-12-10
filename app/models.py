@@ -104,7 +104,17 @@ class Ingredients(db.Model):
             If the ingredient is found, returns the ingredient ID from the database. Otherwise, returns None.
         """
         item = Ingredients.query.filter_by(category=category).filter_by(name=name).first()
-        return item.id
+        if(item):
+            return item.id 
+        else:
+            return None
+
+    def get_ingredient_name(ingr_id):
+        item = Ingredients.query.filter_by(id = ingr_id).first()
+        if(item):
+            return item.name
+        else:
+            return None
 
 class recipes(db.Model):
     """Contains the information on all available recipes.
