@@ -4,7 +4,7 @@ from app.ingredients_list import meats, spices, carbohydrates, vegetables, fruit
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
-from flask_heroku import Heroku
+#from flask_heroku import Heroku
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -15,7 +15,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 
-heroku = Heroku()
+#heroku = Heroku()
 
 
 def create_app(test_config = None):
