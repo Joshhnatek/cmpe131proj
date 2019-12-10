@@ -47,7 +47,7 @@ opencv-python==4.1.1.26
 packaging==19.2
 pbr==5.4.3
 pexpect==4.2.1
-Pillow==5.1.0
+Pillow==6.2.0
 pluggy==0.13.0
 protobuf==3.0.0
 psutil==5.6.3
