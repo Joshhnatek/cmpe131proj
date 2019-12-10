@@ -3,7 +3,7 @@ from app.config import Config
 from app.ingredients_list import meats, spices, carbohydrates, vegetables, fruits
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 
 
 db = SQLAlchemy()
