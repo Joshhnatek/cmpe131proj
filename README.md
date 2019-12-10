@@ -33,3 +33,8 @@ Future Functions:
 
 Heroku:
     https://broke-n-hungry.herokuapp.com/
+    
+To Run Tests: 
+    test_*.py files are in directory: cmpe131proj/
+    run pytest to run tests. 
+   
