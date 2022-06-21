@@ -16,7 +16,7 @@ load==2019.4.13
 MarkupSafe==1.1.1
 matplotlib==3.1.2
 mccabe==0.6.1
-numpy==1.17.2
+numpy==1.22.0
 opencv-python==4.1.1.26
 Pillow==6.2.1
 public==2019.4.13
